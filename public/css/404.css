@@ -1,0 +1,72 @@
+  body{
+overflow: hidden;
+background-color:#3f3f3f !important;
+color:white !important;
+  }
+  .bar{
+    max-width: 240px;
+    margin: 100px auto;
+    padding-top: 140px;
+    position: relative;
+  }
+  .bar::before{
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: #4d6b9f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  .bar::after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .ball{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #7186a9;
+    float: left;
+    border-radius: 50%;
+  }
+  .ball::before{
+    content: "";
+    width: 2px;
+    background: #879cbf;
+    height: 140px;
+    position: absolute;
+    top: -140px;
+    left: calc(50% - 1px);
+  }
+  .ball-1{
+    animation: ballLeft 1s ease-out  infinite alternate;
+    transform-origin: 50% -140px;
+  }
+  .ball-6{
+    animation: ballRight 1s ease-out 1s infinite alternate;
+    transform-origin: 50% -140px;
+  }
+  
+  
+  @keyframes ballLeft {
+      0%, 50% {
+          transform: rotate(0);
+      }
+      100% {
+          transform: rotate(30deg);       
+      }
+  }
+  @keyframes ballRight {
+      0%, 50% {
+          transform: rotate(0);
+      }
+      100% {
+          transform: rotate(-30deg);       
+      }
+  }
+
+
+ 
